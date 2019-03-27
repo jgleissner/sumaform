@@ -232,3 +232,8 @@ variable "additional_disk" {
   description = "disk block definition(s) to be added to this host"
   default = []
 }
+
+variable "suma_version" {
+  description = "Suse Manager product version"
+  default = "latest"
+}

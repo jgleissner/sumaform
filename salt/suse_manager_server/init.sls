@@ -16,13 +16,13 @@ include:
   - suse_manager_server.apparmor
 
 suse_manager_packages:
-  pkg.latest:
-    - refresh: True
-    {% if grains['osfullname'] == 'Leap' %}
-    - name: patterns-uyuni_server
-    {% else %}
-    - name: patterns-suma_server
-    {% endif %}
+  pkg.installed:
+    - pkgs:
+        {% if grains['osfullname'] == 'Leap' %}
+        - patterns-uyuni_server-{{ grains.get('suma_version', '') }}
+        {% else %}
+        - patterns-suma_server-{{ grains.get('suma_version', '') }}
+        {% endif %}
     - require:
       - sls: repos
       - sls: suse_manager_server.firewall

@@ -120,3 +120,8 @@ variable "mac" {
   description = "a MAC address in the form AA:BB:CC:11:22:22"
   default = ""
 }
+
+variable "suma_version" {
+  description = "Suse Manager product version"
+  default = "latest"
+}

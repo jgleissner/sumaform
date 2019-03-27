@@ -64,6 +64,7 @@ apparmor: ${var.apparmor}
 log_server: ${var.log_server}
 from_email: ${var.from_email}
 traceback_email: ${var.traceback_email}
+suma_version: ${var.suma_version}
 
 EOF
 

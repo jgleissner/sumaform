@@ -217,3 +217,8 @@ variable "floating_ips" {
   description = "List of floating IP IDs to associate"
   default = []
 }
+
+variable "suma_version" {
+  description = "Suse Manager product version"
+  default = "latest"
+}
