@@ -79,6 +79,17 @@ install_gems_via_bundle:
       - pkg: cucumber_requisites
       - cmd: spacewalk_git_repository
 
+install_npm:
+  pkg.installed:
+    - name: npm10
+
+# https://github.com/gkushang/cucumber-html-reporter
+install_cucumber_html_reporter_via_npm:
+  cmd.run:
+    - name: npm install cucumber-html-reporter --save-dev
+    - require:
+      - pkg: install_npm
+
 spacewalk_git_repository:
   cmd.run:
 {%- if grains.get("git_repo") == "default" %}
